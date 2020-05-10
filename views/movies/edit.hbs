@@ -1,0 +1,23 @@
+<h1>Update movie info for {{ movie.title }}</h1>
+
+<form action="/movies/{{ movie._id }}" method="POST">
+  <label for="title-input">Rename your movie</label>
+  <input id='title-input' name='title' type="text" value="{{ movie.title }}">
+  <label for="genre-input">What genre is your movie now?</label>
+  {{#each movie.genre}}
+  <input id='genre-input' name='genre' type="text" value="{{ this }}">
+  {{/each}}
+  <label for="plot-input">What is your movie about now?</label>
+  <input id='plot-input' name='plot' type="text" value="{{ movie.plot }}">
+  <label for="celebrities-list">Which celebrities star in your movie?</label>
+  {{#each movie.cast}}
+  <input id='celebrities-list' name='cast' type="text" value="{{ this }}">
+  {{/each}}
+
+  <button>Update your movie!</button>
+</form>
+
+<br>
+<h3><a href="/movies/">Back to movies</a></h3>
+<br>
+<h3><a href="/">Home</a></h3>

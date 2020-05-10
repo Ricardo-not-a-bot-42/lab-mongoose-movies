@@ -1,0 +1,21 @@
+<h1>Update celebrity info for {{ celebrity.name }}</h1>
+
+<form action="/celebrities/{{ celebrity._id }}" method="POST">
+  <label for="name-input">Rename your celebrity</label>
+  <input id='name-input' name='name' type="text" value="{{ celebrity.name }}">
+  <label for="occupation-input">What does your celebrity do now?</label>
+  <input id='occupation-input' name='occupation' type="text" value="{{ celebrity.occupation }}">
+  <label for="catchPhrase-input">What does your celebrity say?</label>
+  <input id='catchPhrase-input' name='catchPhrase' type="text" value="{{ celebrity.catchPhrase }}">
+  <label for="movies-list">Which movies did your celebrity star in?</label>
+  {{#each celebrity.movies}}
+  <input id='movies-list-input' name='movies' type="text" value="{{ this }}">
+  {{/each}}
+
+  <button>Update your celebrity!</button>
+</form>
+
+<br>
+<h3><a href="/celebrities/">Back to celebrities</a></h3>
+<br>
+<h3><a href="/">Home</a></h3>

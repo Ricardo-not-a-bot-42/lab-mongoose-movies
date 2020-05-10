@@ -1,0 +1,12 @@
+<h1>Details</h1>
+<h2>{{ celebrity.name }}</h2>
+<h3>{{ celebrity.occupation }}</h3>
+<h3>{{ celebrity.catchPhrase }}</h3>
+{{#each celebrity.movies}}
+<a href="/movies/view/{{ this }}">{{ this }}</a>
+{{/each}}
+
+<br>
+<h3><a href="/celebrities/">Back to celebrities</a></h3>
+<br>
+<h3><a href="/">Home</a></h3>
